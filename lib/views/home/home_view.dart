@@ -6,9 +6,13 @@ import 'package:stacked/stacked.dart';
 import '../../constants/app_color.dart';
 import '../../widgets/avatar.dart';
 import '../../widgets/buttons/menu_button.dart';
+import '../../widgets/coffee_card/coffee_card.dart';
 import '../../widgets/inputs/app_input.dart';
 import '../../widgets/navigation_bar/custom_navigation_bar.dart';
+import 'components/coffee_cards_section.dart';
 import 'components/coffee_type_section.dart';
+import 'components/slogan_section.dart';
+import 'components/special_section.dart';
 import 'home_viewmodel.dart';
 
 class HomeView extends StatelessWidget {
@@ -28,25 +32,28 @@ class HomeView extends StatelessWidget {
               ),
               bottomNavigationBar: const CustomNavigationBar(),
               body: SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Column(
-                    children: [
-                      verticalSpace(20),
-                      const Text(
-                        StringConstants.slogan,
-                        style: TextStyle(
-                            fontSize: 37, fontWeight: FontWeight.w700),
-                      ),
-                      verticalSpace(30),
-                      const AppInput(),
-                      verticalSpace(30),
-                      CoffeeTypesSections(
-                        itemCount: model.coffeeButtons.length,
-                        onPressed: model.onCoffeeTypeButtonPressedHandler,
-                        coffeeButtons: model.coffeeButtons,
-                      ),
-                    ],
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        verticalSpace(20),
+                        const SloganSection(),
+                        verticalSpace(30),
+                        const AppInput(),
+                        verticalSpace(30),
+                        CoffeeTypesSections(
+                          itemCount: model.coffeeButtons.length,
+                          onPressed: model.onCoffeeTypeButtonPressedHandler,
+                          coffeeButtons: model.coffeeButtons,
+                        ),
+                        verticalSpace(25),
+                        CoffeeCardsSection(model: model),
+                        verticalSpace(10),
+                        const SpecialSection()
+                      ],
+                    ),
                   ),
                 ),
               ),

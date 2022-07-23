@@ -17,10 +17,13 @@ dependencies:
   cupertino_icons: ^1.0.2
   font_awesome_flutter: ^10.1.0
   google_fonts:
+  animations: ^2.0.3
 
   #For MVVM architecture
   stacked: ^2.3.13
   stacked_services: ^0.9.3
+
+
 
 dev_dependencies:
   flutter_test:

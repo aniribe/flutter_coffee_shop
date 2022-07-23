@@ -16,7 +16,7 @@ class MenuButton extends StatelessWidget {
         gradient: const LinearGradient(
           colors: [
             AppColors.grey700,
-            AppColors.black54,
+            AppColors.darkBlackForGradient,
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
