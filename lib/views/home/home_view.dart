@@ -48,9 +48,9 @@ class HomeView extends StatelessWidget {
                           onPressed: model.onCoffeeTypeButtonPressedHandler,
                           coffeeButtons: model.coffeeButtons,
                         ),
-                        verticalSpace(25),
+                        verticalSpace(15),
                         CoffeeCardsSection(model: model),
-                        verticalSpace(10),
+                        verticalSpace(35),
                         const SpecialSection()
                       ],
                     ),

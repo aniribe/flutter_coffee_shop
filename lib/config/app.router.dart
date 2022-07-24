@@ -10,12 +10,15 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
+import '../views/home/coffee_details/coffee_details_view.dart';
 import '../views/home/home_view.dart';
 
 class Routes {
   static const String homeView = '/';
+  static const String coffeeDetailsView = '/coffee-details-view';
   static const all = <String>{
     homeView,
+    coffeeDetailsView,
   };
 }
 
@@ -24,6 +27,7 @@ class StackedRouter extends RouterBase {
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[
     RouteDef(Routes.homeView, page: HomeView),
+    RouteDef(Routes.coffeeDetailsView, page: CoffeeDetailsView),
   ];
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
@@ -31,6 +35,12 @@ class StackedRouter extends RouterBase {
     HomeView: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => const HomeView(),
+        settings: data,
+      );
+    },
+    CoffeeDetailsView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => const CoffeeDetailsView(),
         settings: data,
       );
     },
@@ -51,6 +61,22 @@ extension NavigatorStateExtension on NavigationService {
   }) async {
     return navigateTo(
       Routes.homeView,
+      id: routerId,
+      preventDuplicates: preventDuplicates,
+      parameters: parameters,
+      transition: transition,
+    );
+  }
+
+  Future<dynamic> navigateToCoffeeDetailsView({
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return navigateTo(
+      Routes.coffeeDetailsView,
       id: routerId,
       preventDuplicates: preventDuplicates,
       parameters: parameters,

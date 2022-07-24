@@ -1,9 +1,14 @@
 import 'package:coffee_shop/constants/string_constants.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
+import '../../config/app.locator.dart';
+import '../../config/app.router.dart';
 import '../../model/coffee_button.dart';
 import '../../model/coffee_type.dart';
 
 class HomeViewModel extends BaseViewModel {
+  final _navigationService = locator<NavigationService>();
+
   List<CoffeeButton> coffeeButtons = [
     CoffeeButton(coffeeType: StringConstants.cappuccino, isActive: true),
     CoffeeButton(coffeeType: StringConstants.espresso),
@@ -90,5 +95,9 @@ class HomeViewModel extends BaseViewModel {
     coffeeButtons[index].isActive = true;
     selectedButton = index;
     notifyListeners();
+  }
+
+  Future<void> redirectToDetails() async {
+    _navigationService.navigateTo(Routes.coffeeDetailsView);
   }
 }
