@@ -36,7 +36,10 @@ class CoffeeCard extends StatelessWidget {
         transitionType: ContainerTransitionType.fadeThrough,
         closedBuilder: (BuildContext context, VoidCallback openContainer) {
           return GestureDetector(
-            onTap: openContainer,
+            onTap: () {
+              onTap();
+              openContainer();
+            },
             child: Container(
               padding: const EdgeInsets.all(15),
               width: 170,

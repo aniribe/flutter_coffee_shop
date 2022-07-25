@@ -27,7 +27,7 @@ class CoffeeCardsSection extends StatelessWidget {
               description: model.coffeeList[index].description,
               image: model.coffeeList[index].image,
               price: model.coffeeList[index].price,
-              onTap: model.redirectToDetails,
+              onTap: () => model.setSelectedCoffee(index),
               openBuilderWidget: const CoffeeDetailsView(),
             );
           } else {
