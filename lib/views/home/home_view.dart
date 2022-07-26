@@ -1,12 +1,10 @@
-import 'package:coffee_shop/constants/string_constants.dart';
 import 'package:coffee_shop/util/ui_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:stacked/stacked.dart';
 import '../../constants/app_color.dart';
 import '../../widgets/avatar.dart';
 import '../../widgets/buttons/menu_button.dart';
-import '../../widgets/coffee_card/coffee_card.dart';
 import '../../widgets/inputs/app_input.dart';
 import '../../widgets/navigation_bar/custom_navigation_bar.dart';
 import 'components/coffee_cards_section.dart';
@@ -27,7 +25,12 @@ class HomeView extends StatelessWidget {
               appBar: AppBar(
                 backgroundColor: Colors.transparent,
                 elevation: 0,
-                leading: const MenuButton(),
+                leading: AppIconButton(
+                  icon: FontAwesomeIcons.barsStaggered,
+                  margin: 11,
+                  iconColor: AppColors.white.withOpacity(0.5),
+                  onTap: () {},
+                ),
                 actions: const [Avatar()],
               ),
               bottomNavigationBar: const CustomNavigationBar(),

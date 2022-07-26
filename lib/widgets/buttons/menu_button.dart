@@ -1,31 +1,48 @@
 import 'package:flutter/cupertino.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../constants/app_color.dart';
 
-class MenuButton extends StatelessWidget {
-  const MenuButton({
+class AppIconButton extends StatelessWidget {
+  final IconData icon;
+  final double iconSize;
+  final double height;
+  final double margin;
+  final Color iconColor;
+  final VoidCallback onTap;
+
+  const AppIconButton({
     Key? key,
+    required this.icon,
+    this.iconSize = 15,
+    this.height = 33,
+    this.margin = 0,
+    required this.onTap,
+    required this.iconColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(11),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        gradient: const LinearGradient(
-          colors: [
-            AppColors.grey700,
-            AppColors.darkBlackForGradient,
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: height,
+        width: height,
+        margin: EdgeInsets.all(margin),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          gradient: const LinearGradient(
+            colors: [
+              AppColors.grey700,
+              AppColors.darkBlackForGradient,
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
         ),
-      ),
-      child: Icon(
-        FontAwesomeIcons.barsStaggered,
-        size: 15,
-        color: AppColors.white.withOpacity(0.6),
+        child: Icon(
+          icon,
+          size: iconSize,
+          color: iconColor,
+        ),
       ),
     );
   }

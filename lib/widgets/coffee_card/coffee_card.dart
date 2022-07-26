@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:animations/animations.dart';
 import 'package:coffee_shop/util/ui_helper.dart';
 import 'package:coffee_shop/widgets/coffee_card/price_section.dart';
@@ -14,6 +16,7 @@ class CoffeeCard extends StatelessWidget {
   final String price;
   final VoidCallback onTap;
   final Widget openBuilderWidget;
+  final String rating;
 
   const CoffeeCard({
     Key? key,
@@ -23,6 +26,7 @@ class CoffeeCard extends StatelessWidget {
     required this.price,
     required this.onTap,
     required this.openBuilderWidget,
+    required this.rating,
   }) : super(key: key);
 
   @override
@@ -53,7 +57,7 @@ class CoffeeCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CoffeeImage(image: image),
+                  CoffeeImage(image: image, rating: rating),
                   verticalSpace(10),
                   CoffeeName(
                     coffeeName: coffeeName,

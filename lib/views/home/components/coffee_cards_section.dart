@@ -29,6 +29,7 @@ class CoffeeCardsSection extends StatelessWidget {
               price: model.coffeeList[index].price,
               onTap: () => model.setSelectedCoffee(index),
               openBuilderWidget: const CoffeeDetailsView(),
+              rating: model.coffeeList[index].rating,
             );
           } else {
             return Container();
