@@ -1,8 +1,8 @@
-import 'package:animations/animations.dart';
+import 'dart:ui';
+
 import 'package:coffee_shop/constants/app_color.dart';
 import 'package:coffee_shop/widgets/buttons/menu_button.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:stacked/stacked.dart';
 import '../../../util/ui_helper.dart';
 import 'coffee_details_viewmodel.dart';
@@ -53,6 +53,72 @@ class CoffeeDetailsView extends StatelessWidget {
                             onTap: () {},
                           )
                         ],
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 0,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                        child: Container(
+                          height: 150,
+                          width: screenWidth(context),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 35, vertical: 25),
+                          color: AppColors.black.withOpacity(0.4),
+                          child: Row(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    model.chosenCoffee?.name as String,
+                                    style: const TextStyle(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 1.3),
+                                  ),
+                                  verticalSpace(10),
+                                  Text(
+                                    model.chosenCoffee?.description as String,
+                                    style: TextStyle(
+                                        color: AppColors.white.withOpacity(0.7),
+                                        fontSize: 16),
+                                  ),
+                                  verticalSpace(20),
+                                  Row(
+                                    children: [
+                                      const Icon(
+                                        Icons.star,
+                                        size: 19,
+                                        color: AppColors.mainOrange,
+                                      ),
+                                      horizontalSpace(10),
+                                      Text(
+                                        model.chosenCoffee?.rating as String,
+                                        style: const TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      horizontalSpace(5),
+                                      Text(
+                                        '(${model.chosenCoffee?.voiceAmount as String})',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color:
+                                              AppColors.white.withOpacity(0.7),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                   ),

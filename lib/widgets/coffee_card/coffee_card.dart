@@ -1,11 +1,8 @@
-import 'dart:ui';
-
 import 'package:animations/animations.dart';
 import 'package:coffee_shop/util/ui_helper.dart';
 import 'package:coffee_shop/widgets/coffee_card/price_section.dart';
 import 'package:flutter/material.dart';
 import '../../constants/app_color.dart';
-import '../../views/home/coffee_details/coffee_details_view.dart';
 import 'coffee_imsge.dart';
 import 'coffee_name.dart';
 
