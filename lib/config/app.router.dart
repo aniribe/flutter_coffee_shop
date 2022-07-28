@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-import '../views/home/coffee_details/coffee_details_view.dart';
+import '../views/coffee_details/coffee_details_view.dart';
 import '../views/home/home_view.dart';
 
 class Routes {

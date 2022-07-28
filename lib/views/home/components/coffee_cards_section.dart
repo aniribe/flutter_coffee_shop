@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../widgets/coffee_card/coffee_card.dart';
-import '../coffee_details/coffee_details_view.dart';
+import '../../coffee_details/coffee_details_view.dart';
 import '../home_viewmodel.dart';
 
 class CoffeeCardsSection extends StatelessWidget {

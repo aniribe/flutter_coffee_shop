@@ -7,6 +7,8 @@ class StringConstants {
   static const String flatWhite = 'Flat White';
   static const String mochaLatte = 'Mocha Latte';
   static const String irishCoffee = 'Irish Coffee';
+  static const String coffee = 'Coffee';
+  static const String milk = 'Milk';
 
   //Images
   static const String avatarImage = 'assets/images/avatar.jpeg';
@@ -23,4 +25,6 @@ class StringConstants {
   static const String coffeeImage11 = 'assets/images/coffee11.jpeg';
   static const String coffeeImage12 = 'assets/images/coffee12.jpg';
   static const String coffeeImage13 = 'assets/images/coffee13.jpg';
+  static const String coffeeBeanImage = 'assets/images/coffee-bean.png';
+  static const String dropImage = 'assets/images/drop.png';
 }

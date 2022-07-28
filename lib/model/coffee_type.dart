@@ -5,6 +5,7 @@ class CoffeeType {
   final String image;
   final String rating;
   final String voiceAmount;
+  final String roastType;
 
   CoffeeType({
     required this.name,
@@ -13,5 +14,6 @@ class CoffeeType {
     required this.image,
     required this.rating,
     required this.voiceAmount,
+    required this.roastType,
   });
 }
