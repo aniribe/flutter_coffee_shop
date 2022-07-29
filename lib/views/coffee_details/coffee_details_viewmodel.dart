@@ -10,6 +10,8 @@ class CoffeeDetailsViewModel extends BaseViewModel {
 
   CoffeeType? chosenCoffee;
 
+  bool isExpanded = false;
+
   void onInit() {
     setChosenCoffee();
   }
@@ -17,4 +19,9 @@ class CoffeeDetailsViewModel extends BaseViewModel {
   void setChosenCoffee() => chosenCoffee = _listService.getChosenCoffee();
 
   void onBackButtonPressed() => _navigationService.popRepeated(1);
+
+  void onReadMoreTapHandler() {
+    isExpanded = !isExpanded;
+    notifyListeners();
+  }
 }

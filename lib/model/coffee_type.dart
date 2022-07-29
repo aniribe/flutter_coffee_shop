@@ -6,6 +6,7 @@ class CoffeeType {
   final String rating;
   final String voiceAmount;
   final String roastType;
+  final String coffeeTypeDescription;
 
   CoffeeType({
     required this.name,
@@ -15,5 +16,6 @@ class CoffeeType {
     required this.rating,
     required this.voiceAmount,
     required this.roastType,
+    required this.coffeeTypeDescription,
   });
 }
