@@ -1,6 +1,8 @@
+import 'package:coffee_shop/widgets/read_more/text_length_calculating.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
-import '../../../constants/app_color.dart';
+import '../../constants/app_color.dart';
+import 'get_end_index_of_data.dart';
 
 class ReadMoreContainer extends StatelessWidget {
   final bool isExpanded;
@@ -18,38 +20,13 @@ class ReadMoreContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        TextPainter textPainter = TextPainter(
-          text: TextSpan(
-            text: isExpanded ? ' Read less' : '... Read more',
-            style: const TextStyle(
-              color: AppColors.mainOrange,
-            ),
-            recognizer: TapGestureRecognizer()..onTap = onTap,
-          ),
-          textDirection: TextDirection.rtl,
-          maxLines: 2,
-          ellipsis: '...',
-        );
-
-        // textPainter.layout(
-        //     minWidth: constraints.minWidth, maxWidth: constraints.maxWidth);
-
-        textPainter.text = TextSpan(
+        TextPainter textPainter = textLengthCalculating(
+          isExpanded: isExpanded,
           text: text,
+          constraints: constraints,
         );
 
-        textPainter.layout(
-            minWidth: constraints.minWidth, maxWidth: constraints.maxWidth);
-
-        final textSize = textPainter.size;
-
-        // Get the endIndex of data
-        int? endIndex;
-        final pos = textPainter.getPositionForOffset(Offset(
-          textSize.width - textPainter.size.width / 3,
-          textSize.height,
-        ));
-        endIndex = textPainter.getOffsetBefore(pos.offset);
+        int? endIndex = getEndIndexOfData(textPainter);
 
         var textSpan;
 

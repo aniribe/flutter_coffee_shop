@@ -9,6 +9,11 @@ class StringConstants {
   static const String irishCoffee = 'Irish Coffee';
   static const String coffee = 'Coffee';
   static const String milk = 'Milk';
+  static const String price = 'Price';
+  static const String sSize = 'S';
+  static const String mSize = 'M';
+  static const String lSize = 'L';
+  static const String buyNow = 'Buy Now';
 
   //Images
   static const String avatarImage = 'assets/images/avatar.jpeg';
