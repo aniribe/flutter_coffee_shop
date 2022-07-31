@@ -3,7 +3,6 @@ import 'package:coffee_shop/services/list_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../config/app.locator.dart';
-import '../../config/app.router.dart';
 import '../../model/coffee_button.dart';
 import '../../model/coffee_type.dart';
 

@@ -51,6 +51,11 @@ class HomeView extends StatelessWidget {
                           onPressed: model.onCoffeeTypeButtonPressedHandler,
                           coffeeButtons: model.coffeeButtons,
                         ),
+
+                        ///New Tabs with moving Circle
+                        // CoffeeTypeSectionWithMovingCircle(
+                        //   coffeeButtons: model.coffeeButtons,
+                        // ),
                         verticalSpace(15),
                         CoffeeCardsSection(model: model),
                         verticalSpace(35),

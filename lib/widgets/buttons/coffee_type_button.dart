@@ -5,16 +5,13 @@ import '../../model/coffee_button.dart';
 import '../../util/ui_helper.dart';
 
 class CoffeeTypeButton extends StatelessWidget {
-  // final Function(int) onPressed;
   final VoidCallback onPressed;
-  // final List<CoffeeButton> coffeeButtons;
   final String coffeeType;
   final bool isActive;
 
   const CoffeeTypeButton({
     Key? key,
     required this.onPressed,
-    // required this.coffeeButtons,
     required this.coffeeType,
     required this.isActive,
   }) : super(key: key);
