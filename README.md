@@ -1,16 +1,38 @@
 # coffee_shop
 
-A new Flutter project.
+Two pages from app - Home View and Coffee Details View.
 
-## Getting Started
+<img src="https://github.com/aniribe/flutter_coffee_shop/blob/main/assets/images/app_screenshot.png" height=500px>
 
-This project is a starting point for a Flutter application.
+## Technologies used:
 
-A few resources to get you started if this is your first Flutter project:
+• Flutter
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+• Dart
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+• MVVM pattern
+
+
+## Packages used:
+
+• google_fonts
+
+• expandable_text
+
+• badges
+
+• animations
+
+
+## For MVVM architecture
+
+ • stacked:
+
+ • stacked_services:
+
+ • build_runner:
+
+ • stacked_generator:
+
+ • injectable_generator:
+
